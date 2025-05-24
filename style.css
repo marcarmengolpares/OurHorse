@@ -1,0 +1,873 @@
+/* General Styles */
+:root {
+    --primary-color: #5D7A6D; /* Dark green from logo/header */
+    --secondary-color: #8B9E8D; /* Lighter green for buttons/accents */
+    --text-color: #333;
+    --light-bg: #F7F5F0; /* Light background for sections */
+    --card-bg: #FFFFFF; /* White for cards */
+    --button-hover-color: #708C73;
+    --hero-bg-color: #3E574B; /* Darker green for hero overlay */
+    --horse-brown-1: #A0785A;
+    --horse-brown-2: #C07F56;
+    --horse-light-1: #E2D7BE;
+    --horse-dark-brown: #7A5B4C;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-top: 60px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+/* Header Section */
+.main-header {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 15px 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between; /* Mantén esto para separar left-header-group de auth-buttons */
+    align-items: center;
+}
+
+/* Nuevo estilo para el grupo de la izquierda (logo + nav) */
+/* Antes */
+.left-header-group {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Este es el valor que queremos cambiar */
+}
+
+/* Después */
+.left-header-group {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Reducido el espacio entre el bloque del logo y la navegación */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.2em; /* Reducido de 1.4em a 1.2em para el texto */
+}
+
+/* Asegúrate de que esta regla esté presente y ajustada */
+.logo img {
+    width: 230px;
+    height: 120px;
+    margin-right: 1px; /* Espacio entre la imagen y el texto "OurHorse" */
+    border-radius: 50%;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 30px;
+}
+
+.main-nav a {
+    color: #fff;
+    font-weight: 500;
+    position: relative;
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #fff;
+    transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+.auth-buttons .login-btn {
+    background: none;
+    color: #fff;
+    border: 1px solid #0D4A06;
+    margin-right: 10px;
+}
+
+.auth-buttons .login-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.auth-buttons .register-btn {
+    background-color: #fff;
+    color: var(--primary-color);
+}
+
+.auth-buttons .register-btn:hover {
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+
+/* Hero Section */
+.hero-section {
+    background: url('https://via.placeholder.com/1920x800/8B9E8D/FFFFFF?text=OUR+HORSE+HERO') no-repeat center center/cover; /* Placeholder for hero image */
+    color: #fff;
+    text-align: center;
+    padding: 150px 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px; /* Adjust height as needed */
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(62, 87, 75, 0.7); /* Overlay color */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 4em;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.hero-content p {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.hero-owner-btn,
+.hero-horse-btn {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 15px 30px;
+    font-size: 1.1em;
+    border-radius: 50px;
+}
+
+.hero-owner-btn i,
+.hero-horse-btn i {
+    margin-right: 10px;
+}
+
+.hero-owner-btn:hover,
+.hero-horse-btn:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.hero-cta-buttons .start-free-btn {
+    background-color: #fff;
+    color: var(--hero-bg-color);
+    padding: 15px 40px;
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-right: 20px;
+}
+
+.hero-cta-buttons .start-free-btn:hover {
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+
+.hero-cta-buttons .join-waiting-list-btn {
+    background: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 15px 40px;
+    font-size: 1.1em;
+}
+
+.hero-cta-buttons .join-waiting-list-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* How It Works Section */
+.how-it-works-section {
+    padding: 80px 0;
+    background-color: var(--light-bg);
+}
+
+.how-it-works-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.step-card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    position: relative;
+    padding-top: 60px; /* Space for the number */
+}
+
+.step-number {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary-color);
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: 700;
+    border: 5px solid var(--light-bg);
+}
+
+.step-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    font-family: 'Playfair Display', serif;
+}
+
+.step-card p {
+    color: #666;
+}
+
+/* Certifications Section */
+.certifications-section {
+    padding: 80px 0;
+    background-color: #fff; /* White background for this section */
+}
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.certification-card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--primary-color); /* Green border */
+}
+
+.certification-card .icon-wrapper {
+    background-color: var(--primary-color);
+    color: #fff;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    margin: 0 auto 20px;
+}
+
+.certification-card h3 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    font-family: 'Playfair Display', serif;
+}
+
+.certification-card p {
+    color: #666;
+}
+
+/* Horses and Riders Sections (Similar Styling) */
+.horses-section,
+.riders-section {
+    padding: 80px 0;
+    background-color: var(--light-bg);
+}
+
+.horses-grid,
+.riders-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.horse-card,
+.rider-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    overflow: hidden; /* Ensures image corners are rounded */
+}
+
+.horse-image,
+.rider-image {
+    width: 100%;
+    height: 200px; /* Fixed height for image area */
+    /* background-color will be set inline for placeholders */
+    /* For real images, use: background-image: url('path/to/image.jpg'); background-size: cover; background-position: center; */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.horse-info,
+.rider-info {
+    padding: 20px;
+}
+
+.horse-info h3,
+.rider-info h3 {
+    font-size: 1.3em;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+    text-align: left; /* Override global h2 style */
+    font-family: 'Playfair Display', serif;
+}
+
+.horse-info p,
+.rider-info p {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+/* Pricing Section */
+.pricing-section {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.pricing-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.price-card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    text-align: center;
+    width: 350px;
+    border: 1px solid #eee;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.price-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.price-card h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    font-family: 'Playfair Display', serif;
+}
+
+.price-card .price {
+    font-size: 3em;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+.price-card .price .per-month {
+    font-size: 0.5em;
+    font-weight: 400;
+    color: #666;
+}
+
+.price-card ul {
+    margin-bottom: 30px;
+}
+
+.price-card ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: #555;
+    font-size: 1.1em;
+}
+
+.price-card ul li i {
+    color: var(--primary-color);
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.price-card button {
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.free-plan button {
+    background-color: var(--light-bg);
+    color: var(--primary-color);
+}
+
+.free-plan button:hover {
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+
+.premium-plan {
+    border: 2px solid var(--primary-color);
+    position: relative;
+    background-color: var(--light-bg); /* Lighter background for recommended */
+}
+
+.premium-plan .recommended-tag {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 5px 15px;
+    font-size: 0.8em;
+    font-weight: 600;
+    border-bottom-left-radius: 10px;
+}
+
+.premium-plan button {
+    background-color: var(--secondary-color); /* Adjusted to match image */
+    color: #fff;
+}
+
+.premium-plan button:hover {
+    background-color: var(--primary-color);
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.contact-section h2 {
+    color: #fff;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    font-size: 1em;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #fff;
+}
+
+.send-message-btn {
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 15px 40px;
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.send-message-btn:hover {
+    background-color: #fff;
+    color: var(--primary-color);
+}
+
+/* Footer Section */
+.main-footer {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.4em;
+}
+
+.footer-logo img {
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.footer-social a {
+    color: #fff;
+    font-size: 1.8em;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-legal p {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.footer-legal ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 0.9em;
+}
+
+.footer-legal a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.footer-legal a:hover {
+    color: var(--secondary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .main-nav {
+        display: none; /* Hide navigation on smaller screens for now */
+    }
+
+    .header-content {
+        justify-content: center; /* Center logo and auth buttons */
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .auth-buttons {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 3em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+    }
+
+    .how-it-works-grid,
+    .certifications-grid,
+    .horses-grid,
+    .riders-grid,
+    .pricing-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .price-card {
+        width: 100%;
+        max-width: 350px; /* Constrain width */
+    }
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2em;
+    }
+
+    .hero-section {
+        padding: 100px 20px;
+        height: auto;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero-cta-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero-cta-buttons .start-free-btn,
+    .hero-cta-buttons .join-waiting-list-btn {
+        margin-right: 0; /* Remove margin for vertical stacking */
+    }
+
+    .contact-form {
+        padding: 20px;
+    }
+
+    .footer-legal ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content {
+        flex-direction: column;
+    }
+
+    .logo {
+        margin-bottom: 15px;
+    }
+
+    .auth-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .auth-buttons button {
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+}
+
+/* Nueva Sección: Certificación en Hípicas Colaboradoras */
+.collaborating-centers-certification-section {
+    background-color: var(--light-bg); /* O un color similar al de la imagen */
+    padding: 80px 0;
+    margin: 40px 0; /* Espacio antes y después de la sección */
+}
+
+.collaborating-centers-certification-section .container {
+    max-width: 1300px; /* Aumentado de 900px a 1100px para más espacio */
+    max-height: 5000;
+    padding: 0 40px;
+}
+
+.certification-content-wrapper {
+    display: flex;
+    gap: 40px;
+    /* align-items: flex-start;  Quitamos esto para centrar verticalmente si es necesario */
+    align-items: center; /* Alinea los elementos verticalmente al centro */
+    justify-content: space-between; /* Empuja el mapa a la izquierda y el texto a la derecha */
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    padding: 100px 40px; 
+}
+.certification-image-box {
+    flex-shrink: 0;
+    width: 450px; /* Aumentado a un ancho que quepa el mapa */
+    height: 380px; /* Aumentado a un alto que quepa el mapa */
+    background-color: var(--light-bg);
+    border-radius: 8px;
+    display: flex; /* Mantenemos flex para centrar contenido */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    overflow: hidden; /* Asegura que el contenido no se desborde si el iframe es muy grande */
+    
+}
+
+.map-icon-large {
+    font-size: 8em; /* Tamaño del icono del mapa */
+    color: var(--primary-color); /* Color del icono */
+    opacity: 0.7; /* Ligeramente transparente */
+}
+
+.certification-text-content {
+    flex-grow: 1; /* Permite que el texto ocupe el espacio restante */
+}
+
+.certification-text-content h2 {
+    text-align: left; /* Alinea el título a la izquierda */
+    font-size: 2em; /* Tamaño de fuente del título */
+    margin-top: 0; /* Elimina margen superior por defecto */
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.certification-text-content p {
+    margin-bottom: 15px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.certification-text-content ol {
+    margin-bottom: 25px;
+    margin-left: 20px;
+    color: #555;
+}
+
+.certification-text-content ol li {
+    margin-bottom: 10px;
+}
+
+.get-certification-btn {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 1.1em;
+    font-weight: 600;
+    border-radius: 50px; /* Botón ovalado */
+    display: inline-flex; /* Para alinear el icono y el texto */
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para el botón */
+}
+
+.get-certification-btn:hover {
+    background-color: var(--button-hover-color);
+    transform: translateY(-2px); /* Pequeño efecto al pasar el ratón */
+}
+
+.map-link-button {
+    display: inline-block; /* Para asegurar que el botón de enlace tenga el tamaño correcto */
+    text-decoration: none; /* Eliminar subrayado */
+}
+
+/* Responsividad para la nueva sección */
+@media (max-width: 900px) {
+    .certification-content-wrapper {
+        flex-direction: column; /* Apila los elementos en pantallas más pequeñas */
+        align-items: center; /* Centra los elementos apilados */
+        text-align: center;
+    }
+
+    .certification-image-box {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 30px; /* Espacio entre imagen y texto */
+    }
+
+    .certification-text-content h2 {
+        text-align: center; /* Centra el título en pantallas pequeñas */
+    }
+
+    .certification-text-content ol {
+        text-align: left; /* Mantiene la lista alineada a la izquierda */
+        margin: 0 auto 25px; /* Centra la lista */
+        max-width: 80%; /* Limita el ancho de la lista */
+    }
+}
+
+@media (max-width: 600px) {
+    .collaborating-centers-certification-section .container {
+        padding: 0 20px;
+    }
+
+    .certification-content-wrapper {
+        padding: 30px;
+    }
+
+    .get-certification-btn {
+        width: 100%; /* Botón de ancho completo en móviles */
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+}
