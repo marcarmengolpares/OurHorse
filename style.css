@@ -1,12 +1,17 @@
 /* General Styles */
 :root {
-    --primary-color: #5D7A6D; /* Dark green from logo/header */
-    --secondary-color: #8B9E8D; /* Lighter green for buttons/accents */
+    --primary-color: #5D7A6D;
+    /* Dark green from logo/header */
+    --secondary-color: #8B9E8D;
+    /* Lighter green for buttons/accents */
     --text-color: #333;
-    --light-bg: #F7F5F0; /* Light background for sections */
-    --card-bg: #FFFFFF; /* White for cards */
+    --light-bg: #F7F5F0;
+    /* Light background for sections */
+    --card-bg: #FFFFFF;
+    /* White for cards */
     --button-hover-color: #708C73;
-    --hero-bg-color: #3E574B; /* Darker green for hero overlay */
+    --hero-bg-color: #3E574B;
+    /* Darker green for hero overlay */
     --horse-brown-1: #A0785A;
     --horse-brown-2: #C07F56;
     --horse-light-1: #E2D7BE;
@@ -32,7 +37,8 @@ body {
     padding: 0 20px;
 }
 
-h1, h2 {
+h1,
+h2 {
     font-family: 'Playfair Display', serif;
     text-align: center;
     margin-bottom: 40px;
@@ -72,7 +78,8 @@ button {
 
 .header-content {
     display: flex;
-    justify-content: space-between; /* Mantén esto para separar left-header-group de auth-buttons */
+    justify-content: space-between;
+    /* Mantén esto para separar left-header-group de auth-buttons */
     align-items: center;
 }
 
@@ -81,28 +88,32 @@ button {
 .left-header-group {
     display: flex;
     align-items: center;
-    gap: 20px; /* Este es el valor que queremos cambiar */
+    gap: 20px;
+    /* Este es el valor que queremos cambiar */
 }
 
 /* Después */
 .left-header-group {
     display: flex;
     align-items: center;
-    gap: 10px; /* Reducido el espacio entre el bloque del logo y la navegación */
+    gap: 10px;
+    /* Reducido el espacio entre el bloque del logo y la navegación */
 }
 
 .logo {
     display: flex;
     align-items: center;
     font-weight: 600;
-    font-size: 1.2em; /* Reducido de 1.4em a 1.2em para el texto */
+    font-size: 1.2em;
+    /* Reducido de 1.4em a 1.2em para el texto */
 }
 
 /* Asegúrate de que esta regla esté presente y ajustada */
 .logo img {
-    width: 230px;
-    height: 120px;
-    margin-right: 1px; /* Espacio entre la imagen y el texto "OurHorse" */
+    width: 330px;
+    height: 220;
+    margin-right: 1px;
+    /* Espacio entre la imagen y el texto "OurHorse" */
     border-radius: 50%;
 }
 
@@ -155,7 +166,8 @@ button {
 
 /* Hero Section */
 .hero-section {
-    background: url('https://via.placeholder.com/1920x800/8B9E8D/FFFFFF?text=OUR+HORSE+HERO') no-repeat center center/cover; /* Placeholder for hero image */
+    background: url('https://via.placeholder.com/1920x800/8B9E8D/FFFFFF?text=OUR+HORSE+HERO') no-repeat center center/cover;
+    /* Placeholder for hero image */
     color: #fff;
     text-align: center;
     padding: 150px 20px;
@@ -163,7 +175,8 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 600px; /* Adjust height as needed */
+    height: 600px;
+    /* Adjust height as needed */
 }
 
 .hero-section::before {
@@ -173,7 +186,8 @@ button {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(62, 87, 75, 0.7); /* Overlay color */
+    background-color: rgba(62, 87, 75, 0.7);
+    /* Overlay color */
 }
 
 .hero-content {
@@ -234,15 +248,42 @@ button {
 }
 
 .hero-cta-buttons .join-waiting-list-btn {
-    background: none;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
     color: #fff;
-    border: 1px solid #fff;
-    padding: 15px 40px;
-    font-size: 1.1em;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    padding: 18px 45px;
+    font-size: 1.2em;
+    font-weight: 600;
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-cta-buttons .join-waiting-list-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.hero-cta-buttons .join-waiting-list-btn:hover::before {
+    left: 100%;
 }
 
 .hero-cta-buttons .join-waiting-list-btn:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.15));
+    border-color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
 }
 
 /* How It Works Section */
@@ -264,7 +305,8 @@ button {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     position: relative;
-    padding-top: 60px; /* Space for the number */
+    padding-top: 60px;
+    /* Space for the number */
 }
 
 .step-number {
@@ -299,7 +341,8 @@ button {
 /* Certifications Section */
 .certifications-section {
     padding: 80px 0;
-    background-color: #fff; /* White background for this section */
+    background-color: #fff;
+    /* White background for this section */
 }
 
 .certifications-grid {
@@ -314,7 +357,8 @@ button {
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    border: 1px solid var(--primary-color); /* Green border */
+    border: 1px solid var(--primary-color);
+    /* Green border */
 }
 
 .certification-card .icon-wrapper {
@@ -358,19 +402,42 @@ button {
 .horse-card,
 .rider-card {
     background-color: var(--card-bg);
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    overflow: hidden; /* Ensures image corners are rounded */
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(93, 122, 109, 0.1);
+}
+
+.horse-card:hover,
+.rider-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
 .horse-image,
 .rider-image {
     width: 100%;
-    height: 200px; /* Fixed height for image area */
-    /* background-color will be set inline for placeholders */
-    /* For real images, use: background-image: url('path/to/image.jpg'); background-size: cover; background-position: center; */
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    height: 280px;
+    /* Increased height for better image display */
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+.horse-image img,
+.rider-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.horse-card:hover .horse-image img,
+.rider-card:hover .rider-image img {
+    transform: scale(1.05);
 }
 
 .horse-info,
@@ -383,7 +450,8 @@ button {
     font-size: 1.3em;
     margin-bottom: 5px;
     color: var(--primary-color);
-    text-align: left; /* Override global h2 style */
+    text-align: left;
+    /* Override global h2 style */
     font-family: 'Playfair Display', serif;
 }
 
@@ -404,7 +472,8 @@ button {
     display: flex;
     justify-content: center;
     gap: 40px;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    flex-wrap: wrap;
+    /* Allow wrapping on smaller screens */
 }
 
 .price-card {
@@ -482,7 +551,8 @@ button {
 .premium-plan {
     border: 2px solid var(--primary-color);
     position: relative;
-    background-color: var(--light-bg); /* Lighter background for recommended */
+    background-color: var(--light-bg);
+    /* Lighter background for recommended */
 }
 
 .premium-plan .recommended-tag {
@@ -498,7 +568,8 @@ button {
 }
 
 .premium-plan button {
-    background-color: var(--secondary-color); /* Adjusted to match image */
+    background-color: var(--secondary-color);
+    /* Adjusted to match image */
     color: #fff;
 }
 
@@ -598,8 +669,12 @@ button {
 }
 
 .footer-logo img {
-    margin-right: 10px;
+    width: 120px;
+    height: 120px;
+    margin-right: 20px;
     border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .footer-social a {
@@ -637,11 +712,13 @@ button {
 /* Responsive Design */
 @media (max-width: 992px) {
     .main-nav {
-        display: none; /* Hide navigation on smaller screens for now */
+        display: none;
+        /* Hide navigation on smaller screens for now */
     }
 
     .header-content {
-        justify-content: center; /* Center logo and auth buttons */
+        justify-content: center;
+        /* Center logo and auth buttons */
         flex-wrap: wrap;
         gap: 15px;
     }
@@ -669,7 +746,8 @@ button {
 
     .price-card {
         width: 100%;
-        max-width: 350px; /* Constrain width */
+        max-width: 350px;
+        /* Constrain width */
     }
 }
 
@@ -700,7 +778,8 @@ button {
 
     .hero-cta-buttons .start-free-btn,
     .hero-cta-buttons .join-waiting-list-btn {
-        margin-right: 0; /* Remove margin for vertical stacking */
+        margin-right: 0;
+        /* Remove margin for vertical stacking */
     }
 
     .contact-form {
@@ -739,13 +818,16 @@ button {
 
 /* Nueva Sección: Certificación en Hípicas Colaboradoras */
 .collaborating-centers-certification-section {
-    background-color: var(--light-bg); /* O un color similar al de la imagen */
+    background-color: var(--light-bg);
+    /* O un color similar al de la imagen */
     padding: 80px 0;
-    margin: 40px 0; /* Espacio antes y después de la sección */
+    margin: 40px 0;
+    /* Espacio antes y después de la sección */
 }
 
 .collaborating-centers-certification-section .container {
-    max-width: 1300px; /* Aumentado de 900px a 1100px para más espacio */
+    max-width: 1300px;
+    /* Aumentado de 900px a 1100px para más espacio */
     max-height: 5000;
     padding: 0 40px;
 }
@@ -754,40 +836,56 @@ button {
     display: flex;
     gap: 40px;
     /* align-items: flex-start;  Quitamos esto para centrar verticalmente si es necesario */
-    align-items: center; /* Alinea los elementos verticalmente al centro */
-    justify-content: space-between; /* Empuja el mapa a la izquierda y el texto a la derecha */
+    align-items: center;
+    /* Alinea los elementos verticalmente al centro */
+    justify-content: space-between;
+    /* Empuja el mapa a la izquierda y el texto a la derecha */
     background-color: var(--card-bg);
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    padding: 100px 40px; 
+    padding: 100px 40px;
 }
+
 .certification-image-box {
     flex-shrink: 0;
-    width: 450px; /* Aumentado a un ancho que quepa el mapa */
-    height: 380px; /* Aumentado a un alto que quepa el mapa */
+    width: 450px;
+    /* Aumentado a un ancho que quepa el mapa */
+    height: 380px;
+    /* Aumentado a un alto que quepa el mapa */
     background-color: var(--light-bg);
     border-radius: 8px;
-    display: flex; /* Mantenemos flex para centrar contenido */
-    justify-content: center; /* Centra horizontalmente el contenido */
-    align-items: center; /* Centra verticalmente el contenido */
-    overflow: hidden; /* Asegura que el contenido no se desborde si el iframe es muy grande */
-    
+    display: flex;
+    /* Mantenemos flex para centrar contenido */
+    justify-content: center;
+    /* Centra horizontalmente el contenido */
+    align-items: center;
+    /* Centra verticalmente el contenido */
+    overflow: hidden;
+    /* Asegura que el contenido no se desborde si el iframe es muy grande */
+
 }
 
 .map-icon-large {
-    font-size: 8em; /* Tamaño del icono del mapa */
-    color: var(--primary-color); /* Color del icono */
-    opacity: 0.7; /* Ligeramente transparente */
+    font-size: 8em;
+    /* Tamaño del icono del mapa */
+    color: var(--primary-color);
+    /* Color del icono */
+    opacity: 0.7;
+    /* Ligeramente transparente */
 }
 
 .certification-text-content {
-    flex-grow: 1; /* Permite que el texto ocupe el espacio restante */
+    flex-grow: 1;
+    /* Permite que el texto ocupe el espacio restante */
 }
 
 .certification-text-content h2 {
-    text-align: left; /* Alinea el título a la izquierda */
-    font-size: 2em; /* Tamaño de fuente del título */
-    margin-top: 0; /* Elimina margen superior por defecto */
+    text-align: left;
+    /* Alinea el título a la izquierda */
+    font-size: 2em;
+    /* Tamaño de fuente del título */
+    margin-top: 0;
+    /* Elimina margen superior por defecto */
     margin-bottom: 20px;
     color: var(--primary-color);
 }
@@ -814,45 +912,58 @@ button {
     padding: 15px 30px;
     font-size: 1.1em;
     font-weight: 600;
-    border-radius: 50px; /* Botón ovalado */
-    display: inline-flex; /* Para alinear el icono y el texto */
+    border-radius: 50px;
+    /* Botón ovalado */
+    display: inline-flex;
+    /* Para alinear el icono y el texto */
     align-items: center;
     gap: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para el botón */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Sombra para el botón */
 }
 
 .get-certification-btn:hover {
     background-color: var(--button-hover-color);
-    transform: translateY(-2px); /* Pequeño efecto al pasar el ratón */
+    transform: translateY(-2px);
+    /* Pequeño efecto al pasar el ratón */
 }
 
 .map-link-button {
-    display: inline-block; /* Para asegurar que el botón de enlace tenga el tamaño correcto */
-    text-decoration: none; /* Eliminar subrayado */
+    display: inline-block;
+    /* Para asegurar que el botón de enlace tenga el tamaño correcto */
+    text-decoration: none;
+    /* Eliminar subrayado */
 }
 
 /* Responsividad para la nueva sección */
 @media (max-width: 900px) {
     .certification-content-wrapper {
-        flex-direction: column; /* Apila los elementos en pantallas más pequeñas */
-        align-items: center; /* Centra los elementos apilados */
+        flex-direction: column;
+        /* Apila los elementos en pantallas más pequeñas */
+        align-items: center;
+        /* Centra los elementos apilados */
         text-align: center;
     }
 
     .certification-image-box {
         width: 200px;
         height: 200px;
-        margin-bottom: 30px; /* Espacio entre imagen y texto */
+        margin-bottom: 30px;
+        /* Espacio entre imagen y texto */
     }
 
     .certification-text-content h2 {
-        text-align: center; /* Centra el título en pantallas pequeñas */
+        text-align: center;
+        /* Centra el título en pantallas pequeñas */
     }
 
     .certification-text-content ol {
-        text-align: left; /* Mantiene la lista alineada a la izquierda */
-        margin: 0 auto 25px; /* Centra la lista */
-        max-width: 80%; /* Limita el ancho de la lista */
+        text-align: left;
+        /* Mantiene la lista alineada a la izquierda */
+        margin: 0 auto 25px;
+        /* Centra la lista */
+        max-width: 80%;
+        /* Limita el ancho de la lista */
     }
 }
 
@@ -866,7 +977,8 @@ button {
     }
 
     .get-certification-btn {
-        width: 100%; /* Botón de ancho completo en móviles */
+        width: 100%;
+        /* Botón de ancho completo en móviles */
         padding: 12px 20px;
         font-size: 1em;
     }
